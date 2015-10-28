@@ -50,7 +50,7 @@ class Ke_Customattribute_Model_Observer extends Varien_Object
 
     $item = $observer->getQuoteItem();
     $product = $observer->getProduct();
-    $item->setSize($product->getWebSku());
+    $item->setWebSku($product->getWebSku());
     return $this;
     }
 }
