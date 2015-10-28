@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magento
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE_AFL.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@magentocommerce.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade Magento to newer
+* versions in the future. If you wish to customize Magento for your
+* needs please refer to http://www.magentocommerce.com for more information.
+*
+* @category    Ke
+* @package     Ke_CustomAttribute
+* @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+* @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*/
+-->
+<config>
+    <modules>
+        <Ke_CustomAttribute>
+            <version>1.0.0</version>
+        </Ke_CustomAttribute>
+    </modules>
+    <global>
+        <sales>
+            <quote>
+                <item>
+                    <product_attributes>
+                        <custom_attribute />
+                    </product_attributes>
+                </item>
+            </quote>
+            <quote>
+            <item>
+                <product_attributes>
+                    <color />
+                </product_attributes>
+            </item>
+        </quote>
+        <quote>
+            <item>
+                <product_attributes>
+                    <size />
+                </product_attributes>
+            </item>
+        </quote>
+          <quote>
+            <item>
+                <product_attributes>
+                    <web_sku />
+                </product_attributes>
+            </item>
+        </quote>
+        </sales>
+        <fieldsets>
+            <sales_convert_quote_item>
+                <custom_attribute>
+                    <to_order_item>*</to_order_item>
+                </custom_attribute>
+            </sales_convert_quote_item>
+            <sales_convert_order_item>
+                <custom_attribute>
+                    <to_quote_item>*</to_quote_item>
+                </custom_attribute>
+            </sales_convert_order_item>
+         <sales_convert_quote_item>
+            <color>
+                <to_order_item>*</to_order_item>
+            </color>
+        </sales_convert_quote_item>
+          <sales_convert_quote_item>
+            <size>
+                <to_order_item>*</to_order_item>
+            </size>
+        </sales_convert_quote_item>
+        </fieldsets>
+        <events>
+            <sales_quote_item_set_product>
+                <observers>
+                    <Ke_customattribute>
+                        <class>Ke_customattribute/observer</class>
+                        <method>salesQuoteItemSetCustomAttribute</method>
+                    </Ke_customattribute>
+                </observers>
+            </sales_quote_item_set_product>
+        </events>
+        <events>
+            <sales_quote_item_set_product>
+                <observers>
+                    <Ke_customattribute>
+                        <class>Ke_customattribute/observer</class>
+                        <method>setColorAttribute</method>
+                    </Ke_customattribute>
+                </observers>
+            </sales_quote_item_set_product>
+        </events>
+        <events>
+            <sales_quote_item_set_product>
+                <observers>
+                    <Ke_customattribute>
+                        <class>Ke_customattribute/observer</class>
+                        <method>setSizeAttribute</method>
+                    </Ke_customattribute>
+                </observers>
+            </sales_quote_item_set_product>
+        </events>
+          <events>
+            <sales_quote_item_set_product>
+                <observers>
+                    <Ke_customattribute>
+                        <class>Ke_customattribute/observer</class>
+                        <method>setWebSkuAttributes</method>
+                    </Ke_customattribute>
+                </observers>
+            </sales_quote_item_set_product>
+        </events>
+        <helpers>
+            <Ke_customattribute>
+                <class>Ke_CustomAttribute_Helper</class>
+            </Ke_customattribute>
+        </helpers>
+        <models>
+            <Ke_customattribute>
+                <class>Ke_CustomAttribute_Model</class>
+            </Ke_customattribute>
+        </models>
+        <resources>
+            <customattribute_setup>
+                <setup>
+                    <module>Ke_CustomAttribute</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </customattribute_setup>
+        </resources>
+    </global>
+</config>
