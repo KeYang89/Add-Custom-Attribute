@@ -119,7 +119,7 @@
                 <observers>
                     <Ke_customattribute>
                         <class>Ke_customattribute/observer</class>
-                        <method>setWebSkuAttributes</method>
+                        <method>setWebSkuAttribute</method>
                     </Ke_customattribute>
                 </observers>
             </sales_quote_item_set_product>
